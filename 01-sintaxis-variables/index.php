@@ -1,5 +1,6 @@
 <?php
 
-echo'Ejecutando condicionales...';
+echo'Ejecutando condicionales1...';
+
 
 ?>
