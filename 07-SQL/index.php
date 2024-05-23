@@ -8,7 +8,7 @@
 // La funcion que este hace es mostrar el valor que elegimos
 
 //03-SELECT * FROM profesores WHERE Edad='25'
-//cuya funcion este cumpple es mostrar el valor especifico le pedimos
+// cuya funcion este cumple es mostrar el valor especifico le pedimos
 
 //04-SELECT * FROM profesores ORDER BY edad;
 // cuya funcion este cumple es ordenar de menor a mayor
@@ -26,7 +26,7 @@
 // La funcion que este cumple es agregar una fila a la tabla 
 
 //09-SELECT Nombre FROM estudiantes WHERE Nombre IS NOT NULL;
-// Este cumple la function de anualr todo menos el valor ingresado 
+// Este cumple la funcion de anular todo menos el valor ingresado 
 
 //10-UPDATE `estudiantes` SET `Media Tecnica` = 'sistema' WHERE `ID`= 4;
 // este actualiza los datos seleccinados
