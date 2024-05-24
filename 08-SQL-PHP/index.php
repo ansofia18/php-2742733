@@ -10,7 +10,7 @@ try {
 $nombre = 'Alberto';
 $estado = 'Soltero';
 $materia = 'Deporte';
-$edad = edad;
+$edad = 'edad';
 $documento = 1356527;
 
 //Vamos a preparar una sentecia SQL y la guardamos en una variable
