@@ -1,9 +1,27 @@
 <?php
+if( $_SERVER['REQUEST_METHOD'] == 'POST'){
+$usuario = $_POST['user'];
+$password = $_POST['password'];
 
-//&session_start(); //Inicializa uja sesion
+ $user_register = isset( $_SESSION['userRegister'] ) ? $_SESSION
+['userRegister'] : null;
+$user_register = isset( $_SESSION['userRegister'] ) ? $_SESSION
+['userRegister'] : null;
 
-//$_SESSION['nombre'] = 'Wendy';
-//$_SESSION['pais'] = 'arabia';
+//Verificacion de datos / Llenos
+if( empty($usuario) or empty($password) ){
+    echo 'Rellene completo el formulario';
+}else{
+    //echo $usuario . ' - ' . $password;
+    if($usuario == $user_Register && $password == $passRegister){
+    echo 'listo, iniciaste sesion 😍😍';
+    header('location: user.php');
+    }else{
+    echo 'tu usuario no existe 😘😘';
+         }
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +35,10 @@
 <body>
     <h1>Pagina de Inicio</h1>
 
-<form action="registro.php" method="POST">
+<form action="index.php" method="POST">
 <br>
 <label for="user">user</label>
-<input type="user" placeholder="user" name="user">
+<input type="text" placeholder="user" name="user">
 <br>
 <br>
 <label for="password">password</label>
@@ -31,8 +49,8 @@
 <br>
 <br>
 </form>
-    <a href="./user.php">User page</a>
-    <a href="./cerrar.php">cerrar</a>
+    <a href="./registro.php">Registrate</a>
+   
 </body>
 
 </html>

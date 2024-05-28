@@ -1,6 +1,6 @@
 <?php
 session_start();
-session_destroy();
+
 ?>
 
 <!DOCTYPE html>
@@ -9,12 +9,23 @@ session_destroy();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User page</title>
 </head>
 
 <body>
-    <a href="./user.php">User page</a>
-    <a href="./index.php">Iniciar sesión</a>
+   <?php if( isset($_SESSION['userRegister']) ) : ?>
+
+        <h1>Bienvenido <?php echo $_SESSION['userRegister']; ?> 🦕 </h1>
+        <a href="./cerrar.php">Cerrar sesión</a>
+        <a href="./index.php">Home</a>
+    
+    <?php else : ?>
+
+        <h1>No has iniciado sesión</h1>
+        <a href="./index.php">Iniciar sesión</a>
+    
+    <?php endif ?>
+
 </body>
 
 </html>
