@@ -1,53 +1,109 @@
-    <?php
+<?php session_start();
 
-    if( $_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    echo 'datos enviadoshbjhj';
 
+    echo '<br>';
     $usuario = $_POST['user'];
     $password = $_POST['password'];
-   
-    
-    //Verificacion de datos / Llenos
-    if( empty($usuario) or empty ($password) ){
-        echo 'Rellene completo el formulario';
-    }else{
-        echo $usuario . ' - ' . $password;
-        $_SESSION['userRegistre'] = $usuario;
-        $_SESSION['passRegistre'] = $password;
-        
+    $email = $_POST['email'];
 
-        //echo ' - variables de sesion guardadas😒
+
+
+    if (empty($usuario) or empty($password) or empty($email)) {
+        echo 'rellene completo el formulario';
+    } else {
+        //echo $usuario . ' - ' . $password;
+        $_SESSION['userRegister'] = $usuario;
+        $_SESSION['passRegister'] = $password;
+        $_SESSION['emailRegister'] = $email;
+
+        //echo ' - variables de sesion guardadas🥶';
         //header('location: index.php');
+
+        try {
+            $conexion = new PDO("mysql: host=localhost; dbname=focaapp;", 'root', '');
+            echo "conexion OK";
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
         }
+
+
+
+        $statement = $conexion->prepare("INSERT INTO `userapp`( `ID`, `username`, `correo`, `contraseña`) VALUES (NULL, :username, :pass ,:correo)");
+
+
+        $statement->execute(array(":username" => $usuario, ":pass" => $password, ":correo" => $email));
+
+
+
+
+
+
+        /* 
+                foreach ($statement as $item) {
+                    echo$item['ID'] . ' - '. $item['Nombre'] . '<br>'; */
     }
-    ?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-    <h1>Registrate</h1>
+}
+
+
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        .resgistrate {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+    
+        .texto{
+          font-size:1.5rem ;
+        }
+    </style>
+    <h1 class="resgistrate">¡ Registrate !</h1>
+    <p class="texto">Datos registrados, ya puedes iniciar sesion</p>
 
     <form action="registro.php" method="POST">
-    <br>
-    <label for="user">user</label>
-    <input type="text" placeholder="user" name="user">
-    <br>
-    <br>
-    <label for="password">password</label>
-    <input type="password" placeholder="password" name="password">
-    <br>
-    <br>
-    <button type="submit">Registro</button>
-    <br>
-    <br>
+        <label class="usuario"  for="user">Usuario</label>
+        <br>
+        <input type="text" placeholder="usuario" name="user">
+        <br>
+        <label class="for" for="password">Contraseña</label>
+        <br>
+        <input type="text" placeholder="password" name="password">
+        <br>
+        <label class="for" for="mail">Correo</label>
+        <br>
+        <input type="email" placeholder="email" name="email">
+        <br>
+        <br>
+        <button type="submit">registrate</button>
+
+
     </form>
-    <?php if( isset($_SESSION['userRegister'])):?>
-        <p>Datos registrado, ya puedes iniciar</p>
-        <p> <?php echo $_SESSION['userRegister']. ' - ' . $_SESSION  ['passRegister'];?> </p>
-        <a href="index.php">Iniciar sesión</a>
+
+    <?php if (isset($_SESSION['userRegister'])) : ?>
+
+        <p> <?php echo $_SESSION['userRegister'] . ' - ' . $_SESSION['passRegister'] ?> </p>
+        <a href="index.php">iniciar sesion</a>
     <?php endif ?>
+
 </body>
+
 </html>
