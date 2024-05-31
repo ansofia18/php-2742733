@@ -46,10 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -59,41 +55,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./registro.css">
 </head>
 
 <body>
-    <style>
-        body {
-            background-color: pink;
-        }
 
-        .resgistrate {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-        }
-    
-        .texto{
-          font-size:1.5rem ;
-        }
-    </style>
     <h1 class="resgistrate">¡ Registrate !</h1>
     <p class="texto">Datos registrados, ya puedes iniciar sesion</p>
 
     <form action="registro.php" method="POST">
-        <label class="usuario"  for="user">Usuario</label>
+
+        <div class="usuario">
+        <label for="user">Usuario</label>
         <br>
         <input type="text" placeholder="usuario" name="user">
         <br>
-        <label class="for" for="password">Contraseña</label>
+        <labelfor="password">Contraseña</label>
         <br>
         <input type="text" placeholder="password" name="password">
         <br>
-        <label class="for" for="mail">Correo</label>
+        <label for="mail">Correo</label>
         <br>
         <input type="email" placeholder="email" name="email">
         <br>
         <br>
-        <button type="submit">registrate</button>
+    </div>
+        <button class="registrar" type="submit">registrate</button>
 
 
     </form>

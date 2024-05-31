@@ -1,0 +1,44 @@
+body {
+  background-color: pink;
+}
+
+.caja_grande{
+  background-color: rgba(0, 255, 255, 0);
+  width: 100%;
+  height: max-content;
+  display: flex;
+  margin-left: 15rem;
+}
+
+.caja{
+  background-color: rgb(250, 111, 134);
+  display: flex;
+  flex-direction: column;
+  width:25rem ;
+  height: 30rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+
+}
+
+
+.usuario {
+ 
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.barrau {
+  padding: 12px 30px;
+  border-radius: 15px;
+}
+
+.password {
+
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.barrau {
+  padding: 12px 30px;
+  border-radius: 15px;
+}
