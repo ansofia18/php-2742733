@@ -61,31 +61,30 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 </head>
 
 <body>
-    <div class="caja_grande">
-        <div class="caja">
+    <div class="caja">
 
-            <h1 class="inicio">Pagina de inicio</h1>
+        <h1 class="inicio">Pagina de inicio</h1>
 
-            <form class="info" action="index.php" method="POST">
+        <form class="info" action="index.php" method="POST">
 
-                <div class="usuario">
-                    <label for="user">usuario</label>
+        <label for="user">usuario</label>
+                <br>
+
+                <input class="barrau" type="text" placeholder="usuario" name="user">
+
+                <div class="password">
+                    <label for="password">contraseña</label>
                     <br>
+                    <input class="barrau" type="text" placeholder="password" name="password">
 
-                    <input class="barrau" type="text" placeholder="usuario" name="user">
-
-                    <div class="password">
-                        <label for="password">contraseña</label>
-                        <br>
-                        <input class="barrau" type="text" placeholder="password" name="password">
-                    </div>
-                    <button type="submit">Inicio sesion</button>
-                    <a href="./registro.php">registrate</a>
-            </form>
+                </div>
+                <button class="sesion" type="submit">Inicio sesion</button>
+                <a class="tboton" href="./registro.php">registrate</a>
+        </form>
 
 
-        </div>
     </div>
+
 
 
 
