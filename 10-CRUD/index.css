@@ -1,0 +1,65 @@
+
+.caja_grande{
+  background-color: rgba(0, 255, 255, 0);
+  width: 100%;
+  height: max-content;
+  display: flex;
+  margin-left: 15rem;
+}
+
+.caja{
+  background-color: rgb(235, 118, 137);
+  display: flex;
+  flex-direction: column;
+  width:25rem ;
+  height: 30rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  margin-left: 10rem;
+  margin-top: 6rem;
+}
+
+
+.usuario {
+ 
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.barrau {
+  padding: 12px 30px;
+  border-radius: 15px;
+}
+
+.password {
+
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.barrau {
+  padding: 12px 30px;
+  border-radius: 15px;
+}
+.sesion{
+  text-decoration: none;
+  padding:0.5rem 1rem ;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 227, 232);
+  border: 2rem;
+  border-radius:2rem ;
+  top:0.5;
+  margin-top: 2rem;
+  margin-left: 0.6rem;
+}
+
+.tboton{
+  text-decoration: none;
+  padding:0.5rem 1rem ;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 227, 232);
+  border: 2rem;
+  border-radius:2rem ;
+  margin-top: 2rem;
+  margin-left: 0.6rem;
+}
+

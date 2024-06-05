@@ -67,13 +67,13 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
         <form class="info" action="index.php" method="POST">
 
-        <label for="user">usuario</label>
+        <label for="user">Usuario</label>
                 <br>
 
                 <input class="barrau" type="text" placeholder="usuario" name="user">
 
                 <div class="password">
-                    <label for="password">contraseña</label>
+                    <label for="password">Contraseña</label>
                     <br>
                     <input class="barrau" type="text" placeholder="password" name="password">
 
