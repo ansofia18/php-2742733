@@ -52,5 +52,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['color'] = 'success';
     
     header('Location: user.php');
-}
+
 
