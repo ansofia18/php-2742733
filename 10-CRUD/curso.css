@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+}
+
+table {
+    width: 70%;
+    margin: 25px auto;
+    border-collapse: collapse;
+    font-size: 18px;
+    text-align: left;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ffffff;
+}
+
+th {
+    background-color: #ffffff;
+    color: #1c1c20;
+}
+
+tr:nth-child(even) {
+    background-color: #ffe6e6;
+}
+
+tr:hover {
+    background-color: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #faecf3;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    }

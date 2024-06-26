@@ -5,7 +5,7 @@ if( isset($_GET['id'])){
     $id = $_GET['id'];
     
     $statement = $conexion->prepare("SELECT * FROM cursos WHERE id ='$id'");
-    $statement->execute()
+    $statement->execute();
 }
     else{
         header("location: index.php");
