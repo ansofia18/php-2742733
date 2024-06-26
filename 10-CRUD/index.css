@@ -1,0 +1,18 @@
+
+
+body {
+    background-color: #43a0fd;
+}
+
+.card {
+    transition: transform 0.2s ease; 
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.carousel-inner img {
+    max-height: 400px; /* Altura máxima de las imágenes en el carrusel */
+    object-fit: cover; /* Ajuste de la imagen para cubrir completamente el contenedor */
+}

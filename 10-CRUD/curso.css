@@ -1,43 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
-}
-
-h2 {
-    text-align: center;
-    color: #ffffff;
-}
-
-table {
-    width: 70%;
-    margin: 25px auto;
-    border-collapse: collapse;
-    font-size: 18px;
-    text-align: left;
-    background-color: #fff;
-}
-
-th, td {
-    padding: 12px;
-    border: 1px solid #ffffff;
-}
-
-th {
-    background-color: #ffffff;
-    color: #1c1c20;
-}
-
-tr:nth-child(even) {
-    background-color: #ffe6e6;
-}
-
-tr:hover {
-    background-color: #ffffff;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #faecf3;
+    background-color: #fc0093; /* Color de fondo principal */
     margin: 0;
     padding: 0;
 }
@@ -45,16 +8,16 @@ body {
 .container {
     max-width: 600px;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: #526faf; /* Fondo del contenedor */
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    border: 2px solid #ffffff;
+    border: 2px solid #14efff; /* Borde del contenedor */
 }
 
 h2 {
     text-align: center;
-    color: #ffffff;
+    color: #ff00aa; /* Color del título */
 }
 
 form {
@@ -65,7 +28,7 @@ form {
 label {
     margin-bottom: 8px;
     font-weight: bold;
-    color: #ffffff;
+    color: #0004e7; /* Color de las etiquetas */
 }
 
 input[type="text"],
@@ -76,6 +39,35 @@ select,
 textarea {
     margin-bottom: 16px;
     padding: 8px;
-    border: 1px solid #ffffff;
+    border: 1px solid #e4a700; /* Color del borde de los inputs */
     border-radius: 4px;
-    }
+}
+
+table {
+    width: 70%;
+    margin: 25px auto;
+    border-collapse: collapse;
+    font-size: 18px;
+    text-align: left;
+    background-color: #000000; /* Fondo de la tabla */
+    border: 2px solid #42cc0b; /* Borde de la tabla */
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ffffff; /* Borde de las celdas */
+}
+
+th {
+    background-color: #d10606; /* Color de fondo del encabezado */
+    color: #1c1c20; /* Color del texto del encabezado */
+}
+
+tr:nth-child(even) {
+    background-color: #4e1717; /* Color de fondo de filas pares */
+}
+
+tr:hover {
+    background-color: #ffffff; /* Color de fondo al pasar el mouse sobre filas */
+}

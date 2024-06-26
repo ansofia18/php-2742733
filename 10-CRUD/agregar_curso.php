@@ -1,56 +1,62 @@
-<?php
+<?php require('conexion.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    echo 'datos enviados';
-  $tituloCurso = $_POST['tituloCurso'];
-  
-  //Aqui capturamos datos de la imagen recibida
-    $imageCurso = $_FILES['imageCurso']['top_name'];
-    $nombreImagen = $_FILES['imageCurso']['name'];
-    $tipoImagen = pathinfo($imageCurso, PATHINFO_EXTENSION);
-    $sizeImg = $_FILES['imagenCurso']['size'];
-    $directorio = "images/";}
+    echo "datos enviados";
+    $tituloCurso = $_POST['Titulo'];
 
-    if($tipoImagen == 'jpg' or $tipoImagen == 'jpeg' or $tipoImagen == 'png'){
-        //Hace un insert into de todos los datos recibidos excepto el de imagen
-    $statement = $conexion->prepare("INSERT INTO `cursos`(`ID`, `imagen`, `curso`, `descripción`, `estudiantes`)
-    VALUES (?,?,?,?,?)");
-    $statement->execute(array($imageCurso,$tituloCurso,$descripcionCurso,$estudiantes)); 
-    $idRegistro = $conexion->lastInsert();
+    //aqui capturamos datos de la imagen recibida 
+    $imagenCurso = $_FILES['Imagen']['tmp_name'];
+    $nombreImagen = $_FILES['Imagen']['name'];
+    $tipoImagen = pathinfo($nombreImagen, PATHINFO_EXTENSION);
+    $sizeImg = $_FILES['Imagen']['size'];
+    $directorio = "images/";
 
-    //Prepararla ruta para guardadr la imagen
-    //imagen/46.jpg
-    $ruta = $directorio . $idRegistro . '.' . $tipoImagen;
+    $descripcion = $_POST["Descripcion"];
+    $estudiantes = $_POST["Estudiantes"];
 
-        $statement = $conexion->prepare("UPDATE cursos imagen = $ruta WHERE id = $idRegistro");
+
+    if ($tipoImagen == 'jpg' or $tipoImagen == 'jpeg' or $tipoImagen == 'png') {
+        //Hacer un insert into de todos los datos recibidos excepto el de la imagen
+        $statement = $conexion->prepare("INSERT INTO `cursos`(`imagen`, `titulo`, `descripcion`, `estudiantes`) VALUES ('',?,?,?)");
+        $statement->execute(array($tituloCurso, $descripcion, $estudiantes));
+        $idRegistro = $conexion->lastInsertId();
+
+        //prepara la ruta para guardar la imagen
+        $ruta = $directorio . $idRegistro . '.' . $tipoImagen;
+
+        $statement  = $conexion->prepare("UPDATE cursos SET imagen = '$ruta' WHERE id = '$idRegistro' ");
         $statement->execute();
 
-        if(move_uploaded_file($imageCurso, $ruta)){
-            $_SESSION['mensaje'] = 'Curso agregada exitosamente';
+        if(move_uploaded_file($imagenCurso, $ruta)) {
+            $_SESSION['mensaje'] = 'Curso agregado exitosamente';
             $_SESSION['color'] = 'success';
+        
+            header('Location: curso.php'); 
 
-            header('location: user.php');
-            
         }
- 
+
+    } else {
+        $_SESSION['mensaje'] = 'El archivo de imagen no es admitido 🤳';
+        $_SESSION['color'] = 'danger';
+    
+        header('Location: curso.php'); 
     }
 
 
-    echo"El archivo que subiste se llama" . $nombreImagen . "<br>";
-    echo"El formato de tu imagen es" . $tipoImagen;
+    echo "el archivo subido se llama: " . $nombreImagen . "<br>";
+    echo "El formato de tu imagen es: " . $tipoImagen;
 
-    $descripcionCurso = $_POST['descripcionCurso'];
-    $estudiantes = $_POST['estudiantesCurso'];
+    $titulo = $_POST["Titulo"];
 
-    $statement = $conexion->prepare("INSERT INTO `cursos`(`ID`, `imagen`, `curso`, `descripción`, `estudiantes`)
-    VALUES (?,?,?,?,?)");
-   $statement->execute(array($imageCurso,$tituloCurso,$descripcionCurso,$estudiantes));
- 
+   
+    /*  $statement = $conexion->prepare("INSERT INTO `cursos`(`imagen`, `titulo`, `descripcion`, `estudiantes`) VALUES (?,?,?,?)");
+    $statement->execute(array($Imagen,$Titulo,$Descripcion,$Estudiantes));
 
-    $_SESSION['mensaje'] = 'Curso agregada exitosamente';
+    $_SESSION['mensaje'] = 'tarea agregada exitosamente';
     $_SESSION['color'] = 'success';
-    
-    header('Location: user.php');
+
+    header('Location: curso.php'); */
+}
 
 
