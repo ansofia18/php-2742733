@@ -1,18 +1,24 @@
-
-
-body {
-    background-color: #43a0fd;
+body{
+    background-image: url(./images/1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.card {
-    transition: transform 0.2s ease; 
+
+.boton{
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    background-color: rgba(131, 15, 111, 0.829);
+    border: none;
+    border-radius: 2rem;
+    position: relative; 
+    top: 20rem;
+    width: 12rem !important;
+    margin-left: 25rem !important;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.carousel-inner img {
-    max-height: 400px; /* Altura máxima de las imágenes en el carrusel */
-    object-fit: cover; /* Ajuste de la imagen para cubrir completamente el contenedor */
+.boton a{
+    color: white;
+    text-decoration: none;
 }
